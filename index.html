@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小红书超级卡片机 - 对齐排版版</title>
+    <title>小红书超级卡片机 - 50风格全集成版</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;700;900&family=ZCOOL+XiaoWei&family=Long+Cang&family=Noto+Sans+SC:wght@300;500;900&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
     <style>
@@ -12,8 +12,6 @@
         .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
         .preview-shadow { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
-        
-        /* 按钮激活态 */
         .tpl-btn.active { ring: 2px; ring-color: #ec4899; background-color: #fdf2f8; color: #db2777; border-color: transparent; }
         .align-btn.active { background-color: #fdf2f8; color: #db2777; border-color: #ec4899; }
     </style>
@@ -26,16 +24,16 @@
             
             <div class="p-5 border-b border-gray-100 bg-white z-10">
                 <h1 class="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-600 tracking-tighter">
-                    🔥 卡片机 <span class="text-sm font-normal text-gray-400 font-mono">Align Edition</span>
+                    🔥 超级卡片机 <span class="text-xs font-normal text-gray-400 font-mono">V2.0 Pro</span>
                 </h1>
             </div>
 
             <div class="flex-1 overflow-y-auto custom-scroll p-5 space-y-6">
                 
                 <div class="space-y-2">
-                    <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">文案内容</label>
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">文案内容 (使用 [文字] 包裹来高亮)</label>
                     <div class="relative">
-                        <textarea id="textInput" rows="5" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:border-pink-500 focus:ring-1 focus:ring-pink-500 outline-none transition-all resize-none" placeholder="输入文案..."></textarea>
+                        <textarea id="textInput" rows="5" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:border-pink-500 focus:ring-1 focus:ring-pink-500 outline-none transition-all resize-none" placeholder="输入文案...">在所有的[道别]里，&#10;我还是最喜欢[明天见]。&#10;&#10;To see you tomorrow.</textarea>
                         <div class="absolute bottom-2 right-2 text-[10px] text-gray-400 font-mono bg-white/80 px-1 rounded" id="charCount">0/200</div>
                     </div>
                 </div>
@@ -57,7 +55,7 @@
                     </div>
                     
                     <div>
-                         <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">风格模版</label>
+                         <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block">50款风格模版</label>
                          <div class="relative">
                             <select id="tplSelect" class="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none focus:border-pink-500 appearance-none">
                                 </select>
@@ -69,7 +67,7 @@
                 </div>
 
                 <div>
-                     <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">CP / 署名</label>
+                     <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">署名 / CP</label>
                      <input type="text" id="cpInput" value="@你的名字" class="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none focus:border-pink-500">
                 </div>
 
@@ -78,7 +76,7 @@
                         <label class="text-xs font-bold text-gray-400 uppercase tracking-widest">水印设置</label>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <input type="text" id="wmText" value="GRED" class="w-full p-2 bg-white border border-gray-200 rounded-lg text-sm outline-none" placeholder="水印文字">
+                        <input type="text" id="wmText" value="COPYRIGHT" class="w-full p-2 bg-white border border-gray-200 rounded-lg text-sm outline-none" placeholder="水印文字">
                         <select id="wmStyle" class="p-2 bg-white border border-gray-200 rounded-lg text-xs outline-none">
                             <option value="tiled">全屏平铺</option>
                             <option value="center">居中大图</option>
@@ -87,8 +85,8 @@
                         </select>
                     </div>
                     <div class="flex items-center gap-2">
-                        <input type="range" id="wmOpacity" min="0" max="100" value="10" class="flex-1 h-1 bg-gray-200 rounded-lg appearance-none accent-pink-500">
-                        <span class="text-xs text-gray-400 w-8 text-right" id="opacityVal">10%</span>
+                        <input type="range" id="wmOpacity" min="0" max="100" value="8" class="flex-1 h-1 bg-gray-200 rounded-lg appearance-none accent-pink-500">
+                        <span class="text-xs text-gray-400 w-8 text-right" id="opacityVal">8%</span>
                     </div>
                 </div>
 
@@ -97,7 +95,7 @@
             <div class="p-5 border-t border-gray-100 bg-white">
                 <button id="downloadBtn" class="w-full py-3.5 bg-slate-900 text-white font-bold rounded-xl shadow-lg hover:bg-pink-600 transition-all flex items-center justify-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    <span>保存高清原图</span>
+                    <span>保存 1200x1600 高清原图</span>
                 </button>
             </div>
         </div>
@@ -110,33 +108,79 @@
 
     <script>
         const templates = {
+            // --- 经典/极简 (1-10) ---
             'minimal': { name: '极简白', bg: '#ffffff', text: '#333333', hl: '#ef4444', font: 'Noto Serif SC', type: 'clean' },
             'dark': { name: '暗夜黑', bg: '#111111', text: '#f0f0f0', hl: '#fbbf24', font: 'Noto Serif SC', type: 'clean' },
             'gray': { name: '高级灰', bg: '#f3f4f6', text: '#374151', hl: '#111827', font: 'Noto Sans SC', type: 'clean' },
+            'oat': { name: '燕麦色', bg: '#f5f5dc', text: '#4a4a4a', hl: '#8b4513', font: 'Noto Serif SC', type: 'clean' },
+            'cream': { name: '奶油味', bg: '#fffdf0', text: '#5d4037', hl: '#d4a373', font: 'Noto Sans SC', type: 'clean' },
+            'paper': { name: '旧报纸', bg: '#f4f1ea', text: '#2c2c2c', hl: '#991b1b', font: 'Noto Serif SC', type: 'clean' },
+            'concrete': { name: '清水砼', bg: '#e2e2e2', text: '#1a1a1a', hl: '#3b82f6', font: 'Noto Sans SC', type: 'clean' },
+            'matcha': { name: '抹茶绿', bg: '#f0f4f0', text: '#2d5a27', hl: '#8eb03e', font: 'Noto Sans SC', type: 'clean' },
+            'latte': { name: '拿铁', bg: '#efebe9', text: '#4e342e', hl: '#a1887f', font: 'Noto Serif SC', type: 'clean' },
+            'nordic': { name: '北欧蓝', bg: '#eceff1', text: '#263238', hl: '#546e7a', font: 'Noto Sans SC', type: 'clean' },
+
+            // --- 情感/治愈 (11-20) ---
             'warm': { name: '暖阳', bg: '#fff7ed', text: '#7c2d12', hl: '#ea580c', font: 'ZCOOL XiaoWei', type: 'clean' },
+            'sakura': { name: '樱花粉', bg: '#fff1f2', text: '#9d174d', hl: '#db2777', font: 'ZCOOL KuaiLe', type: 'cute' },
+            'lavender': { name: '薰衣草粉', bg: '#f5f3ff', text: '#4c1d95', hl: '#8b5cf6', font: 'Noto Serif SC', type: 'clean' },
+            'mint': { name: '薄荷蓝', bg: '#f0fdfa', text: '#0f766e', hl: '#2dd4bf', font: 'Noto Sans SC', type: 'clean' },
+            'lemon': { name: '柠檬黄', bg: '#fefce8', text: '#713f12', hl: '#eab308', font: 'ZCOOL KuaiLe', type: 'cute' },
+            'sunset': { name: '落日紫', bg: 'linear-gradient(135deg, #fbc2eb, #a6c1ee)', text: '#4c1d95', hl: '#ffffff', font: 'ZCOOL XiaoWei', type: 'gradient' },
+            'peach': { name: '蜜桃', bg: '#fff5f5', text: '#c53030', hl: '#feb2b2', font: 'ZCOOL KuaiLe', type: 'cute' },
+            'forest': { name: '森林', bg: '#14532d', text: '#dcfce7', hl: '#4ade80', font: 'Noto Serif SC', type: 'solid' },
+            'ocean': { name: '深海', bg: '#1e3a8a', text: '#bfdbfe', hl: '#60a5fa', font: 'Noto Serif SC', type: 'solid' },
+            'marshmallow': { name: '棉花糖', bg: 'linear-gradient(135deg, #e0c3fc, #8ec5fc)', text: '#2d3436', hl: '#ffffff', font: 'ZCOOL KuaiLe', type: 'gradient' },
+
+            // --- 复古/中式 (21-30) ---
+            'ink': { name: '水墨风', bg: '#f5f5f5', text: '#171717', hl: '#dc2626', font: 'Long Cang', type: 'ink' },
+            'vintage': { name: '复古绿', bg: '#2d4039', text: '#d4a373', hl: '#faedcd', font: 'Noto Serif SC', type: 'solid' },
+            'dynasty': { name: '宫廷红', bg: '#7c1c1c', text: '#fde68a', hl: '#ffffff', font: 'Ma Shan Zheng', type: 'solid' },
+            'bamboo': { name: '竹韵', bg: '#fdfbf7', text: '#1a2e1a', hl: '#606c38', font: 'Long Cang', type: 'clean' },
+            'terracotta': { name: '陶土', bg: '#bc6c25', text: '#fefae0', hl: '#dda15e', font: 'Noto Serif SC', type: 'solid' },
+            'republic': { name: '民国蓝', bg: '#264653', text: '#e9c46a', hl: '#f4a261', font: 'Noto Serif SC', type: 'solid' },
+            'porcelain': { name: '青花', bg: '#f0f7ff', text: '#005596', hl: '#003366', font: 'ZCOOL XiaoWei', type: 'clean' },
+            'jade': { name: '温润', bg: '#e0f2f1', text: '#004d40', hl: '#80cbc4', font: 'Noto Serif SC', type: 'clean' },
+            'bronze': { name: '古铜', bg: '#3e2723', text: '#d7ccc8', hl: '#bcaaa4', font: 'Noto Serif SC', type: 'solid' },
+            'zen': { name: '枯山水', bg: '#fafafa', text: '#424242', hl: '#9e9e9e', font: 'Noto Serif SC', type: 'clean' },
+
+            // --- 流行/艺术 (31-40) ---
             'film': { name: '电影感', bg: '#000000', text: '#ffffff', hl: '#f59e0b', font: 'ZCOOL XiaoWei', type: 'movie' },
             'polaroid': { name: '拍立得', bg: '#fdfbf7', text: '#222222', hl: '#ec4899', font: 'Ma Shan Zheng', type: 'polaroid' },
-            'forest': { name: '森林绿', bg: '#14532d', text: '#dcfce7', hl: '#4ade80', font: 'Noto Serif SC', type: 'solid' },
-            'ocean': { name: '深海蓝', bg: '#1e3a8a', text: '#bfdbfe', hl: '#60a5fa', font: 'Noto Serif SC', type: 'solid' },
-            'sunset': { name: '落日紫', bg: 'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)', text: '#4c1d95', hl: '#7c3aed', font: 'ZCOOL XiaoWei', type: 'gradient' },
-            'sakura': { name: '樱花粉', bg: '#fff1f2', text: '#9d174d', hl: '#db2777', font: 'ZCOOL KuaiLe', type: 'cute' },
             'cyber': { name: '赛博', bg: '#050505', text: '#00ff41', hl: '#d946ef', font: 'Noto Sans SC', type: 'cyber' },
-            'ink': { name: '水墨风', bg: '#f5f5f5', text: '#171717', hl: '#dc2626', font: 'Long Cang', type: 'ink' },
+            'acid': { name: '酸性', bg: '#bfff00', text: '#000000', hl: '#ff00ff', font: 'Noto Sans SC', type: 'clean' },
+            'magazine': { name: '时尚', bg: '#ffffff', text: '#000000', hl: '#ff0000', font: 'Noto Serif SC', type: 'clean' },
+            'neon': { name: '霓虹', bg: '#000046', text: '#1cb5e0', hl: '#ffffff', font: 'Noto Sans SC', type: 'solid' },
+            'vogue': { name: 'Vogue', bg: '#000000', text: '#ffffff', hl: '#999999', font: 'Noto Serif SC', type: 'clean' },
+            'bauhaus': { name: '包豪斯', bg: '#f5f5f5', text: '#000000', hl: '#e63946', font: 'Noto Sans SC', type: 'clean' },
+            'pop': { name: '波普', bg: '#ff0054', text: '#9ef01a', hl: '#ffffff', font: 'ZCOOL KuaiLe', type: 'solid' },
+            'duotone': { name: '双色', bg: '#6a11cb', text: '#2575fc', hl: '#ffffff', font: 'Noto Sans SC', type: 'solid' },
+
+            // --- 季节/自然 (41-50) ---
+            'spring': { name: '早春', bg: '#ecfdf5', text: '#065f46', hl: '#10b981', font: 'Noto Sans SC', type: 'clean' },
+            'summer': { name: '盛夏', bg: '#fff7ed', text: '#9a3412', hl: '#f97316', font: 'ZCOOL KuaiLe', type: 'clean' },
+            'autumn': { name: '金秋', bg: '#78350f', text: '#fef3c7', hl: '#fbbf24', font: 'Noto Serif SC', type: 'solid' },
+            'winter': { name: '凛冬', bg: '#f8fafc', text: '#1e293b', hl: '#38bdf8', font: 'Noto Serif SC', type: 'clean' },
+            'midnight': { name: '子夜', bg: '#020617', text: '#94a3b8', hl: '#f8fafc', font: 'Noto Serif SC', type: 'solid' },
+            'galaxy': { name: '星河', bg: 'linear-gradient(to bottom, #000428, #004e92)', text: '#ffffff', hl: '#00d2ff', font: 'Noto Serif SC', type: 'gradient' },
+            'glacier': { name: '冰川', bg: '#e0f7fa', text: '#006064', hl: '#4dd0e1', font: 'Noto Sans SC', type: 'clean' },
+            'desert': { name: '荒漠', bg: '#edc9af', text: '#5d4037', hl: '#8b4513', font: 'Noto Serif SC', type: 'clean' },
+            'aurora': { name: '极光', bg: 'linear-gradient(to right, #00c6ff, #0072ff)', text: '#ffffff', hl: '#fbc2eb', font: 'Noto Sans SC', type: 'gradient' },
+            'volcano': { name: '熔岩', bg: '#1a1a1a', text: '#f44336', hl: '#ffeb3b', font: 'Noto Sans SC', type: 'solid' }
         };
 
         let state = {
             tpl: 'minimal',
-            align: 'center', // left, center, right
+            align: 'center',
             text: '在所有的[道别]里，\n我还是最喜欢[明天见]。\n\nTo see you tomorrow.',
-            cp: '@GRED',
-            wm: { text: 'GRED', style: 'tiled', opacity: 0.1 }
+            cp: '@你的名字',
+            wm: { text: 'COPYRIGHT', style: 'tiled', opacity: 0.08 }
         };
 
         const canvas = document.getElementById('mainCanvas');
         const ctx = canvas.getContext('2d');
 
         function init() {
-            // 填充模版下拉框
             const select = document.getElementById('tplSelect');
             Object.keys(templates).forEach(key => {
                 const opt = document.createElement('option');
@@ -149,7 +193,6 @@
                 draw();
             });
 
-            // 绑定事件
             bindInput('textInput', val => state.text = val);
             bindInput('cpInput', val => state.cp = val);
             bindInput('wmText', val => state.wm.text = val);
@@ -162,8 +205,6 @@
             });
 
             document.getElementById('downloadBtn').addEventListener('click', download);
-            canvas.addEventListener('click', download);
-
             draw();
         }
 
@@ -183,27 +224,25 @@
             });
         }
 
-        function draw() {
-            const w = 1200;
-            const h = 1600;
-            canvas.width = w;
-            canvas.height = h;
-            canvas.style.width = '375px'; 
-
-            const tpl = templates[state.tpl];
-
-            drawBackground(ctx, w, h, tpl);
-            if(state.wm.style !== 'none') drawWatermark(ctx, w, h);
-            drawDecoration(ctx, w, h, tpl);
-            drawRichText(ctx, w, h, tpl); // 重点在这里
-            drawSignature(ctx, w, h, tpl);
-        }
-
         function drawBackground(ctx, w, h, tpl) {
-            if (tpl.bg.startsWith('linear-gradient')) {
-                const grd = ctx.createLinearGradient(0, 0, w, h);
-                grd.addColorStop(0, "#fbc2eb");
-                grd.addColorStop(1, "#a6c1ee");
+            if (tpl.bg.includes('gradient')) {
+                let grd;
+                if (tpl.bg.includes('to bottom')) {
+                    grd = ctx.createLinearGradient(0, 0, 0, h);
+                } else if (tpl.bg.includes('to right')) {
+                    grd = ctx.createLinearGradient(0, 0, w, 0);
+                } else {
+                    grd = ctx.createLinearGradient(0, 0, w, h);
+                }
+                
+                const colors = tpl.bg.match(/#[a-fA-F0-9]{6}|#[a-fA-F0-9]{3}/g);
+                if (colors && colors.length >= 2) {
+                    grd.addColorStop(0, colors[0]);
+                    grd.addColorStop(1, colors[1]);
+                } else {
+                    grd.addColorStop(0, '#fbc2eb');
+                    grd.addColorStop(1, '#a6c1ee');
+                }
                 ctx.fillStyle = grd;
             } else {
                 ctx.fillStyle = tpl.bg;
@@ -213,9 +252,7 @@
 
         function drawWatermark(ctx, w, h) {
             ctx.save();
-            ctx.fillStyle = '#000000'; // 简化逻辑，通用黑色，靠透明度调节
-            if(['dark','film','midnight','cyber','ocean'].includes(state.tpl)) ctx.fillStyle = '#ffffff';
-            
+            ctx.fillStyle = ['dark','film','midnight','cyber','ocean','galaxy','volcano'].includes(state.tpl) ? '#ffffff' : '#000000';
             ctx.globalAlpha = state.wm.opacity;
             const text = state.wm.text.toUpperCase();
 
@@ -225,11 +262,11 @@
                 ctx.rotate(-Math.PI / 6);
                 ctx.translate(-w, -h); 
                 ctx.textAlign = 'center';
-                for(let x=0; x<w*2; x+=600) {
-                    for(let y=0; y<h*2; y+=400) ctx.fillText(text, x, y);
+                for(let x=0; x<w*2.5; x+=600) {
+                    for(let y=0; y<h*2.5; y+=400) ctx.fillText(text, x, y);
                 }
             } else if (state.wm.style === 'center') {
-                ctx.font = 'bold 250px Arial';
+                ctx.font = 'bold 200px Arial';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillText(text, w/2, h/2);
@@ -244,25 +281,30 @@
         function drawDecoration(ctx, w, h, tpl) {
             if (tpl.type === 'polaroid') {
                 ctx.fillStyle = '#171717';
-                ctx.shadowColor = 'rgba(0,0,0,0.2)';
-                ctx.shadowBlur = 30;
+                ctx.shadowColor = 'rgba(0,0,0,0.3)';
+                ctx.shadowBlur = 40;
                 ctx.fillRect(100, 100, 1000, 1150);
                 ctx.shadowBlur = 0;
             } else if (tpl.type === 'movie') {
                 ctx.fillStyle = '#000';
-                ctx.fillRect(0, 0, w, 200);
-                ctx.fillRect(0, h-200, w, 200);
+                ctx.fillRect(0, 0, w, 220);
+                ctx.fillRect(0, h-220, w, 220);
+                // 绘制电影胶片齿孔感
+                ctx.fillStyle = '#333';
+                for(let i=0; i<w; i+=80) {
+                    ctx.fillRect(i+30, 80, 20, 30);
+                    ctx.fillRect(i+30, h-110, 20, 30);
+                }
             } else if (tpl.type === 'ink') {
                 ctx.strokeStyle = '#b91c1c';
-                ctx.lineWidth = 4;
+                ctx.lineWidth = 6;
                 ctx.strokeRect(60, 60, w-120, h-120);
+                ctx.strokeRect(75, 75, w-150, h-150);
             }
         }
 
-        // --- 核心更新：支持对齐的富文本绘制 ---
         function drawRichText(ctx, w, h, tpl) {
             const raw = state.text || ' ';
-            // 解析高亮
             const segments = [];
             const regex = /\[(.*?)\]/g;
             let lastIndex = 0;
@@ -274,26 +316,22 @@
             }
             if (lastIndex < raw.length) segments.push({ text: raw.substring(lastIndex), hl: false });
 
-            // 布局设置
-            let fontSize = 70;
+            let fontSize = 72;
             let lineHeight = 1.6;
             let maxWidth = 900; 
             let startY = h / 2;
-            let paddingX = 150; // 左右边距
+            let paddingX = 150;
 
-            if (tpl.type === 'polaroid') {
-                startY = 650; maxWidth = 800; paddingX = 200; fontSize = 75;
-            } else if (tpl.type === 'movie') {
-                fontSize = 60; startY = h - 250;
-            }
+            if (tpl.type === 'polaroid') { startY = 650; maxWidth = 800; paddingX = 200; fontSize = 70; }
+            else if (tpl.type === 'movie') { fontSize = 65; startY = h / 2; }
+            else if (tpl.type === 'cyber') { fontSize = 80; }
 
             if(raw.length > 80) fontSize *= 0.85;
-            if(raw.length > 150) fontSize *= 0.8;
+            if(raw.length > 150) fontSize *= 0.75;
 
             ctx.font = `bold ${fontSize}px "${tpl.font}", sans-serif`;
             const baseLineHeight = fontSize * lineHeight;
 
-            // 拆行
             let lines = [];
             let currentLine = [];
             let currentLineWidth = 0;
@@ -314,32 +352,25 @@
             });
             lines.push(currentLine);
 
-            // 绘制
             let totalHeight = lines.length * baseLineHeight;
             let cursorY = startY - (totalHeight / 2) + (baseLineHeight / 2);
 
             lines.forEach(line => {
                 const lineWidth = line.reduce((acc, item) => acc + ctx.measureText(item.char).width, 0);
                 let cursorX;
-
-                // --- 坐标计算核心逻辑 ---
-                if (state.align === 'left') {
-                    cursorX = paddingX; // 左对齐：固定左边距
-                } else if (state.align === 'right') {
-                    cursorX = w - paddingX - lineWidth; // 右对齐：总宽 - 右边距 - 行宽
-                } else {
-                    cursorX = (w - lineWidth) / 2; // 居中：(总宽 - 行宽) / 2
-                }
+                if (state.align === 'left') cursorX = paddingX;
+                else if (state.align === 'right') cursorX = w - paddingX - lineWidth;
+                else cursorX = (w - lineWidth) / 2;
 
                 line.forEach(item => {
                     ctx.fillStyle = item.hl ? tpl.hl : tpl.text;
                     if(tpl.type === 'polaroid') ctx.fillStyle = item.hl ? tpl.hl : '#ffffff';
-                    if(tpl.type === 'movie') ctx.fillStyle = item.hl ? tpl.hl : '#e5e5e5';
                     
                     if(item.hl && tpl.type === 'cyber') {
-                        ctx.shadowColor = tpl.hl; ctx.shadowBlur = 20;
-                    } else if (tpl.type === 'movie') {
-                        ctx.shadowColor = 'black'; ctx.shadowBlur = 5;
+                        ctx.shadowColor = tpl.hl; ctx.shadowBlur = 25;
+                    } else if (tpl.type === 'movie' && !item.hl) {
+                        ctx.fillStyle = '#f0f0f0';
+                        ctx.shadowColor = 'black'; ctx.shadowBlur = 4;
                     } else {
                          ctx.shadowBlur = 0;
                     }
@@ -357,18 +388,22 @@
             ctx.save();
             let fontSize = 40;
             let x = w - 100;
-            let y = h - 100;
+            let y = h - 120;
             let align = 'right';
             let color = tpl.text;
 
             if (tpl.type === 'polaroid') {
-                y = 1450; x = w / 2; align = 'center'; color = '#333'; fontSize = 60;
-                ctx.font = `60px "Ma Shan Zheng", cursive`;
+                y = 1420; x = w / 2; align = 'center'; color = '#333'; fontSize = 55;
+                ctx.font = `${fontSize}px "Ma Shan Zheng", cursive`;
             } else if (tpl.type === 'movie') {
-                color = 'rgba(255,255,255,0.7)';
-                ctx.font = `40px "${tpl.font}"`;
+                color = 'rgba(255,255,255,0.6)';
+                ctx.font = `${fontSize}px "${tpl.font}"`;
+                y = h - 280;
+            } else if (tpl.type === 'ink') {
+                x = 150; y = h - 150; align = 'left';
+                ctx.font = `${fontSize}px "${tpl.font}"`;
             } else {
-                ctx.font = `40px "${tpl.font}"`;
+                ctx.font = `${fontSize}px "${tpl.font}"`;
             }
 
             ctx.fillStyle = color;
@@ -377,10 +412,23 @@
             ctx.restore();
         }
 
+        function draw() {
+            const w = 1200, h = 1600;
+            canvas.width = w; canvas.height = h;
+            canvas.style.width = '375px'; 
+            const tpl = templates[state.tpl];
+
+            drawBackground(ctx, w, h, tpl);
+            if(state.wm.style !== 'none') drawWatermark(ctx, w, h);
+            drawDecoration(ctx, w, h, tpl);
+            drawRichText(ctx, w, h, tpl);
+            drawSignature(ctx, w, h, tpl);
+        }
+
         function download() {
             const link = document.createElement('a');
             link.download = `Card_${state.tpl}_${Date.now()}.png`;
-            link.href = canvas.toDataURL('image/png');
+            link.href = canvas.toDataURL('image/png', 1.0);
             link.click();
         }
 
