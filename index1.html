@@ -104,17 +104,65 @@
 
     <script>
         const templates = {
+            // --- 经典/极简 (1-10) ---
             'minimal': { name: '极简白', bg: '#ffffff', text: '#333333', hl: '#ef4444', font: 'Noto Serif SC', type: 'clean' },
             'dark': { name: '暗夜黑', bg: '#111111', text: '#f0f0f0', hl: '#fbbf24', font: 'Noto Serif SC', type: 'clean' },
+            'gray': { name: '高级灰', bg: '#f3f4f6', text: '#374151', hl: '#111827', font: 'Noto Sans SC', type: 'clean' },
+            'oat': { name: '燕麦色', bg: '#f5f5dc', text: '#4a4a4a', hl: '#8b4513', font: 'Noto Serif SC', type: 'clean' },
+            'cream': { name: '奶油味', bg: '#fffdf0', text: '#5d4037', hl: '#d4a373', font: 'Noto Sans SC', type: 'clean' },
+            'paper': { name: '旧报纸', bg: '#f4f1ea', text: '#2c2c2c', hl: '#991b1b', font: 'Noto Serif SC', type: 'clean' },
+            'concrete': { name: '清水砼', bg: '#e2e2e2', text: '#1a1a1a', hl: '#3b82f6', font: 'Noto Sans SC', type: 'clean' },
+            'matcha': { name: '抹茶绿', bg: '#f0f4f0', text: '#2d5a27', hl: '#8eb03e', font: 'Noto Sans SC', type: 'clean' },
+            'latte': { name: '拿铁', bg: '#efebe9', text: '#4e342e', hl: '#a1887f', font: 'Noto Serif SC', type: 'clean' },
+            'nordic': { name: '北欧蓝', bg: '#eceff1', text: '#263238', hl: '#546e7a', font: 'Noto Sans SC', type: 'clean' },
+
+            // --- 情感/治愈 (11-20) ---
             'warm': { name: '暖阳', bg: '#fff7ed', text: '#7c2d12', hl: '#ea580c', font: 'ZCOOL XiaoWei', type: 'clean' },
+            'sakura': { name: '樱花粉', bg: '#fff1f2', text: '#9d174d', hl: '#db2777', font: 'ZCOOL KuaiLe', type: 'cute' },
+            'lavender': { name: '薰衣草粉', bg: '#f5f3ff', text: '#4c1d95', hl: '#8b5cf6', font: 'Noto Serif SC', type: 'clean' },
+            'mint': { name: '薄荷蓝', bg: '#f0fdfa', text: '#0f766e', hl: '#2dd4bf', font: 'Noto Sans SC', type: 'clean' },
+            'lemon': { name: '柠檬黄', bg: '#fefce8', text: '#713f12', hl: '#eab308', font: 'ZCOOL KuaiLe', type: 'cute' },
+            'sunset': { name: '落日紫', bg: 'linear-gradient(135deg, #fbc2eb, #a6c1ee)', text: '#4c1d95', hl: '#ffffff', font: 'ZCOOL XiaoWei', type: 'gradient' },
+            'peach': { name: '蜜桃', bg: '#fff5f5', text: '#c53030', hl: '#feb2b2', font: 'ZCOOL KuaiLe', type: 'cute' },
+            'forest': { name: '森林', bg: '#14532d', text: '#dcfce7', hl: '#4ade80', font: 'Noto Serif SC', type: 'solid' },
+            'ocean': { name: '深海', bg: '#1e3a8a', text: '#bfdbfe', hl: '#60a5fa', font: 'Noto Serif SC', type: 'solid' },
+            'marshmallow': { name: '棉花糖', bg: 'linear-gradient(135deg, #e0c3fc, #8ec5fc)', text: '#2d3436', hl: '#ffffff', font: 'ZCOOL KuaiLe', type: 'gradient' },
+
+            // --- 复古/中式 (21-30) ---
             'ink': { name: '水墨风', bg: '#f5f5f5', text: '#171717', hl: '#dc2626', font: 'Long Cang', type: 'ink' },
+            'vintage': { name: '复古绿', bg: '#2d4039', text: '#d4a373', hl: '#faedcd', font: 'Noto Serif SC', type: 'solid' },
+            'dynasty': { name: '宫廷红', bg: '#7c1c1c', text: '#fde68a', hl: '#ffffff', font: 'Ma Shan Zheng', type: 'solid' },
+            'bamboo': { name: '竹韵', bg: '#fdfbf7', text: '#1a2e1a', hl: '#606c38', font: 'Long Cang', type: 'clean' },
+            'terracotta': { name: '陶土', bg: '#bc6c25', text: '#fefae0', hl: '#dda15e', font: 'Noto Serif SC', type: 'solid' },
+            'republic': { name: '民国蓝', bg: '#264653', text: '#e9c46a', hl: '#f4a261', font: 'Noto Serif SC', type: 'solid' },
+            'porcelain': { name: '青花', bg: '#f0f7ff', text: '#005596', hl: '#003366', font: 'ZCOOL XiaoWei', type: 'clean' },
+            'jade': { name: '温润', bg: '#e0f2f1', text: '#004d40', hl: '#80cbc4', font: 'Noto Serif SC', type: 'clean' },
+            'bronze': { name: '古铜', bg: '#3e2723', text: '#d7ccc8', hl: '#bcaaa4', font: 'Noto Serif SC', type: 'solid' },
+            'zen': { name: '枯山水', bg: '#fafafa', text: '#424242', hl: '#9e9e9e', font: 'Noto Serif SC', type: 'clean' },
+
+            // --- 流行/艺术 (31-40) ---
             'film': { name: '电影感', bg: '#000000', text: '#ffffff', hl: '#f59e0b', font: 'ZCOOL XiaoWei', type: 'movie' },
             'polaroid': { name: '拍立得', bg: '#fdfbf7', text: '#222222', hl: '#ec4899', font: 'Ma Shan Zheng', type: 'polaroid' },
             'cyber': { name: '赛博', bg: '#050505', text: '#00ff41', hl: '#d946ef', font: 'Noto Sans SC', type: 'cyber' },
-            'sakura': { name: '樱花粉', bg: '#fff1f2', text: '#9d174d', hl: '#db2777', font: 'ZCOOL KuaiLe', type: 'cute' },
-            'forest': { name: '森林', bg: '#14532d', text: '#dcfce7', hl: '#4ade80', font: 'Noto Serif SC', type: 'solid' },
-            'galaxy': { name: '星河', bg: 'linear-gradient(to bottom, #000428, #004e92)', text: '#ffffff', hl: '#00d2ff', font: 'Noto Serif SC', type: 'gradient' }
-            // ... 可自行按原样添加更多
+            'acid': { name: '酸性', bg: '#bfff00', text: '#000000', hl: '#ff00ff', font: 'Noto Sans SC', type: 'clean' },
+            'magazine': { name: '时尚', bg: '#ffffff', text: '#000000', hl: '#ff0000', font: 'Noto Serif SC', type: 'clean' },
+            'neon': { name: '霓虹', bg: '#000046', text: '#1cb5e0', hl: '#ffffff', font: 'Noto Sans SC', type: 'solid' },
+            'vogue': { name: 'Vogue', bg: '#000000', text: '#ffffff', hl: '#999999', font: 'Noto Serif SC', type: 'clean' },
+            'bauhaus': { name: '包豪斯', bg: '#f5f5f5', text: '#000000', hl: '#e63946', font: 'Noto Sans SC', type: 'clean' },
+            'pop': { name: '波普', bg: '#ff0054', text: '#9ef01a', hl: '#ffffff', font: 'ZCOOL KuaiLe', type: 'solid' },
+            'duotone': { name: '双色', bg: '#6a11cb', text: '#2575fc', hl: '#ffffff', font: 'Noto Sans SC', type: 'solid' },
+
+            // --- 季节/自然 (41-50) ---
+            'spring': { name: '早春', bg: '#ecfdf5', text: '#065f46', hl: '#10b981', font: 'Noto Sans SC', type: 'clean' },
+            'summer': { name: '盛夏', bg: '#fff7ed', text: '#9a3412', hl: '#f97316', font: 'ZCOOL KuaiLe', type: 'clean' },
+            'autumn': { name: '金秋', bg: '#78350f', text: '#fef3c7', hl: '#fbbf24', font: 'Noto Serif SC', type: 'solid' },
+            'winter': { name: '凛冬', bg: '#f8fafc', text: '#1e293b', hl: '#38bdf8', font: 'Noto Serif SC', type: 'clean' },
+            'midnight': { name: '子夜', bg: '#020617', text: '#94a3b8', hl: '#f8fafc', font: 'Noto Serif SC', type: 'solid' },
+            'galaxy': { name: '星河', bg: 'linear-gradient(to bottom, #000428, #004e92)', text: '#ffffff', hl: '#00d2ff', font: 'Noto Serif SC', type: 'gradient' },
+            'glacier': { name: '冰川', bg: '#e0f7fa', text: '#006064', hl: '#4dd0e1', font: 'Noto Sans SC', type: 'clean' },
+            'desert': { name: '荒漠', bg: '#edc9af', text: '#5d4037', hl: '#8b4513', font: 'Noto Serif SC', type: 'clean' },
+            'aurora': { name: '极光', bg: 'linear-gradient(to right, #00c6ff, #0072ff)', text: '#ffffff', hl: '#fbc2eb', font: 'Noto Sans SC', type: 'gradient' },
+            'volcano': { name: '熔岩', bg: '#1a1a1a', text: '#f44336', hl: '#ffeb3b', font: 'Noto Sans SC', type: 'solid' }
         };
 
         let state = {
